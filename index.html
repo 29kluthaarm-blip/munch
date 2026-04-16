@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookie Clicker Lite</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <header class="topbar">
+        <h1>🍪 Cookie Clicker Lite</h1>
+        <div class="stats">
+          <div><strong id="cookieCount">0</strong> cookies</div>
+          <div><span id="cps">0</span> cookies/sec</div>
+          <div><span id="clickPower">1</span> cookies/click</div>
+        </div>
+      </header>
+
+      <main class="game-grid">
+        <section class="panel click-panel">
+          <button id="mainCookie" aria-label="Bake cookies">🍪</button>
+          <p class="hint">Click the cookie to bake!</p>
+          <div id="floatingTextContainer" aria-hidden="true"></div>
+          <button id="goldenCookie" class="golden-cookie hidden" aria-label="Golden cookie">✨</button>
+        </section>
+
+        <section class="panel shop-panel">
+          <h2>Buildings</h2>
+          <div id="buildingShop" class="list"></div>
+          <h2>Upgrades</h2>
+          <div id="upgradeShop" class="list"></div>
+        </section>
+
+        <section class="panel side-panel">
+          <h2>Achievements</h2>
+          <ul id="achievements" class="achievements"></ul>
+          <h2>Prestige</h2>
+          <p>You gain +5% production per prestige point.</p>
+          <p>Potential prestige points: <strong id="potentialPrestige">0</strong></p>
+          <button id="prestigeButton">Ascend & Reset</button>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div>Total cookies baked: <strong id="totalCookies">0</strong></div>
+        <div>Prestige points: <strong id="prestigePoints">0</strong></div>
+        <div>
+          <button id="saveBtn">Save</button>
+          <button id="resetBtn">Hard Reset</button>
+        </div>
+      </footer>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>

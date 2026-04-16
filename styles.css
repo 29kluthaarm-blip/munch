@@ -1,0 +1,182 @@
+:root {
+  color-scheme: dark;
+  --bg: #141114;
+  --panel: #221c22;
+  --text: #fef6eb;
+  --muted: #c8b7c7;
+  --accent: #ffb347;
+  --good: #7fffd4;
+  --bad: #ff8b8b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #2b1f2f, var(--bg));
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  min-height: 100vh;
+}
+
+.layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.topbar,
+.footer,
+.panel {
+  background: color-mix(in oklab, var(--panel) 90%, black);
+  border: 1px solid #3b2e3e;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+}
+
+.topbar,
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stats {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.game-grid {
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.panel h2 {
+  margin: 0.25rem 0 0.5rem;
+}
+
+.click-panel {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 480px;
+}
+
+#mainCookie {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  border: 4px solid #5b4532;
+  background: radial-gradient(circle at 30% 30%, #f4ca83, #cb8f4c 70%);
+  box-shadow: 0 10px 30px rgb(0 0 0 / 35%);
+  font-size: 6rem;
+  cursor: pointer;
+  transition: transform 100ms ease;
+}
+
+#mainCookie:active {
+  transform: scale(0.95);
+}
+
+.hint {
+  color: var(--muted);
+}
+
+.golden-cookie {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid #ffe58a;
+  background: radial-gradient(circle at 30% 30%, #fff2ad, #f6bf47 70%);
+  font-size: 2rem;
+  cursor: pointer;
+  animation: pulse 1s infinite;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes pulse {
+  0%,
+  100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.list {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.shop-item,
+.upgrade-item {
+  border: 1px solid #4a3a4e;
+  border-radius: 10px;
+  padding: 0.55rem;
+  display: grid;
+  gap: 0.2rem;
+  background: #2a212b;
+}
+
+.shop-item button,
+.upgrade-item button,
+.footer button,
+#prestigeButton {
+  border: 0;
+  border-radius: 8px;
+  padding: 0.4rem 0.55rem;
+  cursor: pointer;
+  color: #161016;
+  background: linear-gradient(180deg, #ffd28e, #ffb347);
+  font-weight: 700;
+}
+
+.shop-item button:disabled,
+.upgrade-item button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.achievements {
+  margin: 0;
+  padding-left: 1rem;
+  color: var(--muted);
+}
+
+.achievements li.unlocked {
+  color: var(--good);
+}
+
+.floating {
+  position: absolute;
+  pointer-events: none;
+  color: var(--good);
+  font-weight: 700;
+  animation: floatUp 900ms ease-out forwards;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-45px); opacity: 0; }
+}
+
+@media (max-width: 980px) {
+  .game-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar,
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
