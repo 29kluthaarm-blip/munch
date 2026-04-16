@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cookie Clicker Lite</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>🍪 Cookie Clicker Lite</h1>
+    <div class="top-actions">
+      <button id="saveBtn">Save</button>
+      <button id="resetBtn">Reset</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="panel stats-panel">
+      <h2>Bakery</h2>
+      <p class="resource" id="cookieCount">0 cookies</p>
+      <p id="cps">0 cookies / second</p>
+      <p id="clickPower">1 cookie / click</p>
+      <p id="prestigeInfo">Prestige level: 0 (x1.00 CpS)</p>
+
+      <div class="cookie-wrap">
+        <button id="cookieButton" aria-label="Bake cookie">🍪</button>
+      </div>
+
+      <p id="goldenCookieHint">A golden cookie might appear at any moment…</p>
+    </section>
+
+    <section class="panel shop-panel">
+      <h2>Buildings</h2>
+      <ul id="buildingList" class="shop-list"></ul>
+
+      <h2>Upgrades</h2>
+      <ul id="upgradeList" class="shop-list"></ul>
+    </section>
+
+    <section class="panel side-panel">
+      <h2>Golden Cookie</h2>
+      <button id="goldenCookie" class="hidden">✨ Golden Cookie ✨</button>
+      <p id="goldenStatus">No golden cookie active.</p>
+
+      <h2>Achievements</h2>
+      <ul id="achievementList" class="achievement-list"></ul>
+
+      <h2>Prestige</h2>
+      <p>Reset to earn Heavenly Chips based on your all-time cookies baked.</p>
+      <button id="prestigeBtn">Ascend</button>
+    </section>
+  </main>
+
+  <template id="shopItemTemplate">
+    <li class="shop-item">
+      <div>
+        <strong class="name"></strong>
+        <p class="meta"></p>
+      </div>
+      <button class="buy-btn">Buy</button>
+    </li>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
